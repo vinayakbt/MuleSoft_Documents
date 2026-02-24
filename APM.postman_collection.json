@@ -1,0 +1,943 @@
+{
+  "info": {
+    "_postman_id": "856ed18d-91c5-463f-ab50-3b2b728b51c2",
+    "name": "APM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19948758"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n// For KCI   : \"getCloudhubApps\"\r\n// \"client_id\"     : \"6d374579c1fb4c97b893d9a23e66e462\",\r\n// \"client_secret\" : \"30548543f8a24E7383eeB443b4e75c74\",\r\n//  For KCI : list_api\r\n//  Client Id  : \"710d81b6521f4a848fe03ed853975a57\",\r\n//  Client Secret : \"4088CbEDB49C4ACcbEAA814d80390Fe4\",\r\n // For HC-Solventum EDI  : 3MHC-EDI\r\n  \"client_id\"  : \"4c2a296f42274dd9ad9437c5c66042d8\",\r\n  \"client_secret\" : \"7aa2a7dE37744891a177E4231Db8B349\",\r\n  // For SOlventum EDI  : readEDIApps\r\n//  \"client_id\"  : \"603f70f5372f4c2398d43d42d7a79076\",\r\n//  \"client_secret\" : \"5Bf357eE4Eaf4e5Ea8166483d2a62E4f\",\r\n //  For HelthCare  : \"3mHealthcareDeploy\"\r\n //   \"client_id\"     : \"a511436f1630417ab207da54e7274c85\",\r\n //   \"client_secret\" : \"1bF0c235a5ae497Fb7739894cC9112D8\",\r\n    \"grant_type\"    : \"client_credentials\"  \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "accounts",
+            "api",
+            "v2",
+            "oauth2",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "APM_documentflows",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/9aae7c63-cb1d-4227-bcad-3bf3fb2713d5/documentflows/b4df7378-b7e4-4d28-a7ae-00c4c68872db",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "9aae7c63-cb1d-4227-bcad-3bf3fb2713d5",
+            "documentflows",
+            "b4df7378-b7e4-4d28-a7ae-00c4c68872db"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "APM_deployments",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/9aae7c63-cb1d-4227-bcad-3bf3fb2713d5/deployments",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "9aae7c63-cb1d-4227-bcad-3bf3fb2713d5",
+            "deployments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "contactTypes",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/contactTypes",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "contactTypes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "partners",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "partnerID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners/33614691-82d9-4435-a938-4b50c6beeaf6",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners",
+            "33614691-82d9-4435-a938-4b50c6beeaf6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "contacts",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners/33614691-82d9-4435-a938-4b50c6beeaf6/contacts",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners",
+            "33614691-82d9-4435-a938-4b50c6beeaf6",
+            "contacts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "identifiers",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners/33614691-82d9-4435-a938-4b50c6beeaf6/identifiers",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners",
+            "33614691-82d9-4435-a938-4b50c6beeaf6",
+            "identifiers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "identifierId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners/33614691-82d9-4435-a938-4b50c6beeaf6/identifiers/4258d290-ebd1-4d63-a8ca-bcbdd1a23b03",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners",
+            "33614691-82d9-4435-a938-4b50c6beeaf6",
+            "identifiers",
+            "4258d290-ebd1-4d63-a8ca-bcbdd1a23b03"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "logo",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners/33614691-82d9-4435-a938-4b50c6beeaf6/logo",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners",
+            "33614691-82d9-4435-a938-4b50c6beeaf6",
+            "logo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "statuses",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners/33614691-82d9-4435-a938-4b50c6beeaf6/statuses",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners",
+            "33614691-82d9-4435-a938-4b50c6beeaf6",
+            "statuses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "documents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/partners/a239e133-6606-4359-ae35-51116c50dcd5/documents",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "partners",
+            "a239e133-6606-4359-ae35-51116c50dcd5",
+            "documents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "certificates",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/f16a56ca-8809-4d44-bc90-d9233666e7cb/partners/fbab868d-f5c7-46f3-bfd2-f73c7e972d4a/certificates?dependencies=true",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "f16a56ca-8809-4d44-bc90-d9233666e7cb",
+            "partners",
+            "fbab868d-f5c7-46f3-bfd2-f73c7e972d4a",
+            "certificates"
+          ],
+          "query": [
+            {
+              "key": "dependencies",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "identifierTypes",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/identifierTypes",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "identifierTypes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "identifierTypeId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/identifierTypes/65715d63-b628-4eb0-913d-cfdb55057c15",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "identifierTypes",
+            "65715d63-b628-4eb0-913d-cfdb55057c15"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "endpoints",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/f16a56ca-8809-4d44-bc90-d9233666e7cb/endpoints/5a51437b-93e3-4d2c-8b4d-1a9a3e37c3d5",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "f16a56ca-8809-4d44-bc90-d9233666e7cb",
+            "endpoints",
+            "5a51437b-93e3-4d2c-8b4d-1a9a3e37c3d5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "endpointId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/{{environmentId}}/endpoints/{{Endpoint_Id}}?dependencies=true",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "{{environmentId}}",
+            "endpoints",
+            "{{Endpoint_Id}}"
+          ],
+          "query": [
+            {
+              "key": "dependencies",
+              "value": "true",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "mappings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer_Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/{{organizationId}}/environments/9aae7c63-cb1d-4227-bcad-3bf3fb2713d5/documentflows/b4df7378-b7e4-4d28-a7ae-00c4c68872db/mappings",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "{{organizationId}}",
+            "environments",
+            "9aae7c63-cb1d-4227-bcad-3bf3fb2713d5",
+            "documentflows",
+            "b4df7378-b7e4-4d28-a7ae-00c4c68872db",
+            "mappings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Endpoints",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "b0c5fffe-f216-4691-a1ce-48a6983dbd85",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/1d0dddcb-284a-4003-a4f0-fc9e13023535/endpoints?excludeRoles=STORAGE_API&page=1&pageSize=30 ",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "1d0dddcb-284a-4003-a4f0-fc9e13023535",
+            "endpoints"
+          ],
+          "query": [
+            {
+              "key": "excludeRoles",
+              "value": "STORAGE_API"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "pageSize",
+              "value": "30 "
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EndpointsById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "b0c5fffe-f216-4691-a1ce-48a6983dbd85",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/1d0dddcb-284a-4003-a4f0-fc9e13023535/endpoints/0fa49a2b-97b5-4fdd-ba28-c3d74fd721bf",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "1d0dddcb-284a-4003-a4f0-fc9e13023535",
+            "endpoints",
+            "0fa49a2b-97b5-4fdd-ba28-c3d74fd721bf"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "MSG_Flows",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "b02d1f75-cfd2-43ca-8d9e-7c773c7913d2",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/partnermanager/partners/api/v1/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/d0c3e71f-1ca7-4158-89a9-46c1ed083e08/documentflows/2ef45cb2-7c58-4473-aa75-2fd27a427496",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "partnermanager",
+            "partners",
+            "api",
+            "v1",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "d0c3e71f-1ca7-4158-89a9-46c1ed083e08",
+            "documentflows",
+            "2ef45cb2-7c58-4473-aa75-2fd27a427496"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1",
+              "disabled": true
+            },
+            {
+              "key": "pageSize",
+              "value": "20",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deployments",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "af8c7789-3cfd-42fc-bc8c-39baa47a58b8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/1d0dddcb-284a-4003-a4f0-fc9e13023535/deployments/f81ce57c-6cfb-486a-97ea-edb03e6133be",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "1d0dddcb-284a-4003-a4f0-fc9e13023535",
+            "deployments",
+            "f81ce57c-6cfb-486a-97ea-edb03e6133be"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "organizationId",
+      "value": "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+      "disabled": true
+    },
+    {
+      "key": "environmentId",
+      "value": "9aae7c63-cb1d-4227-bcad-3bf3fb2713d5",
+      "disabled": true
+    },
+    {
+      "key": "Bearer_Token",
+      "value": "884865f0-18e6-4bbb-a761-50895c008c72",
+      "disabled": true
+    }
+  ]
+}

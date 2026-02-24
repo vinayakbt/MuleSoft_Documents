@@ -1,0 +1,1130 @@
+{
+  "info": {
+    "_postman_id": "9a779112-0dbc-421e-a069-de7659b6039b",
+    "name": "SpinCo Dynamic Client Registration (Okta API)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19948758"
+  },
+  "item": [
+    {
+      "name": "Apps API",
+      "item": [
+        {
+          "name": "Create App",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"oidc_client\",\n    \"label\": \"Sample Client\",\n    \"signOnMode\": \"OPENID_CONNECT\",\n    \"credentials\": {\n      \"oauthClient\": {\n        \"token_endpoint_auth_method\": \"client_secret_post\"\n      }\n    },\n    \"settings\": {\n      \"oauthClient\": {\n        \"client_uri\": \"http://localhost:8080\",\n        \"logo_uri\": \"http://developer.okta.com/assets/images/logo-new.png\",\n        \"redirect_uris\": [\n          \"https://example.com/oauth2/callback\",\n          \"myapp://callback\"\n        ],\n        \"response_types\": [\n          \"token\",\n          \"id_token\",\n          \"code\"\n        ],\n        \"grant_types\": [\n          \"implicit\",\n          \"authorization_code\"\n        ],\n        \"application_type\": \"native\"\n      }\n    }\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/apps",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "apps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Apps",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/v1/apps",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "apps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update App",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"{{appId}}\",\n  \"name\": \"oidc_client\",\n  \"label\": \"Sample Client\",\n  \"signOnMode\": \"OPENID_CONNECT\",\n  \"credentials\": {\n    \"signing\": {\n      \"kid\": \"cg4-_A_ifCK7fsKIKjHP27P0JGeuhnHHKEID1yXy42M\"\n    },\n    \"oauthClient\": {\n      \"client_id\": \"0oa1hm4POxgJM6CPu0g4\",\n      \"client_secret\": \"5jVbn2W72FOAWeQCg7-s_PA0aLqHWjHvUCt2xk-z\",\n      \"token_endpoint_auth_method\": \"client_secret_post\"\n    }\n  },\n  \"settings\": {\n    \"oauthClient\": {\n      \"client_uri\": \"http://localhost:8080\",\n      \"logo_uri\": \"http://developer.okta.com/assets/images/logo-new.png\",\n      \"redirect_uris\": [\n        \"https://example.com/oauth2/callback\",\n        \"myapp://callback\"\n      ],\n      \"response_types\": [\n        \"token\",\n        \"id_token\",\n        \"code\"\n      ],\n      \"grant_types\": [\n        \"implicit\",\n        \"authorization_code\"\n      ],\n      \"application_type\": \"native\"\n    }\n  },\n  \"profile\": {\n    \"whitelist\": [\n      \"{{groupId}}\"\n    ]\n  }\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/v1/apps/{{appId}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "apps",
+                "{{appId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Non-Prod-External",
+      "item": [
+        {
+          "name": "Get Logo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "0oa98utqw6ee80z1o1d7",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "T_uRSHzrxPTNy_3GBOavjC3VlFmE3LdizcYTB457Kxrs_XzT2sIZTaI6zYW1BYYx",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/.well-known/logo",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                ".well-known",
+                "logo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Clients",
+          "protocolProfileBehavior": {
+            "protocolVersion": "http2",
+            "strictSSL": false
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{ext-apikey-np}}"
+              }
+            ],
+            "url": {
+              "raw": "{{ext-url-np}}/oauth2/v1/clients",
+              "host": [
+                "{{ext-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{ext-apikey-np}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\n    \"client_name\": \"Web client\",\n    \"redirect_uris\": [\n      \"https://httpbin.org/get\"\n    ],\n    \"response_types\": [\n      \"code\",\n      \"token\",\n      \"id_token\"\n    ],\n    \"grant_types\": [\n      \"refresh_token\",\n      \"authorization_code\",\n      \"implicit\"\n    ],\n    \"token_endpoint_auth_method\": \"client_secret_basic\",\n    \"application_type\": \"web\"\n  }"
+            },
+            "url": {
+              "raw": "{{ext-url-np1}}/oauth2/v1/clients",
+              "host": [
+                "{{ext-url-np1}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Client",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{ext-apikey-np}}"
+              }
+            ],
+            "url": {
+              "raw": "{{ext-url-np}}/oauth2/v1/clients/{{ext-clientId-np}}",
+              "host": [
+                "{{ext-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{ext-clientId-np}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Client",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"client_id\": \"{{clientId}}\",\n\t\"client_name\": \"Web client\",\n\t\"redirect_uris\": [\n\t\t\"https://httpbin.org/get\"\n\t],\n\t\"response_types\": [\n\t\t\"code\",\n\t\t\"token\",\n\t\t\"id_token\"\n\t],\n\t\"grant_types\": [\n\t\t\"refresh_token\",\n\t\t\"authorization_code\",\n\t\t\"implicit\"\n\t],\n\t\"token_endpoint_auth_method\": \"client_secret_basic\",\n\t\"application_type\": \"web\"\n}"
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Client",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Generate New Client Secret",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}/lifecycle/newSecret",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}",
+                "lifecycle",
+                "newSecret"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Non-Prod-Internal",
+      "item": [
+        {
+          "name": "Get Logo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/.well-known/logo",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                ".well-known",
+                "logo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Clients",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{int-apikey-np}}"
+              }
+            ],
+            "url": {
+              "raw": "{{int-url-np}}/oauth2/v1/clients",
+              "host": [
+                "{{int-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{int-apikey-np}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\n    \"client_name\": \"Web client\",\n    \"redirect_uris\": [\n      \"https://httpbin.org/get\"\n    ],\n    \"response_types\": [\n      \"code\",\n      \"token\",\n      \"id_token\"\n    ],\n    \"grant_types\": [\n      \"refresh_token\",\n      \"authorization_code\",\n      \"implicit\"\n    ],\n    \"token_endpoint_auth_method\": \"client_secret_basic\",\n    \"application_type\": \"web\"\n  }"
+            },
+            "url": {
+              "raw": "{{int-url-np}}/oauth2/v1/clients",
+              "host": [
+                "{{int-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Client",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{int-apikey-np}}"
+              }
+            ],
+            "url": {
+              "raw": "{{int-url-np}}/oauth2/v1/clients/{{int-clientId-np}}",
+              "host": [
+                "{{int-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{int-clientId-np}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Client",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"client_id\": \"{{clientId}}\",\n\t\"client_name\": \"Web client\",\n\t\"redirect_uris\": [\n\t\t\"https://httpbin.org/get\"\n\t],\n\t\"response_types\": [\n\t\t\"code\",\n\t\t\"token\",\n\t\t\"id_token\"\n\t],\n\t\"grant_types\": [\n\t\t\"refresh_token\",\n\t\t\"authorization_code\",\n\t\t\"implicit\"\n\t],\n\t\"token_endpoint_auth_method\": \"client_secret_basic\",\n\t\"application_type\": \"web\"\n}"
+            },
+            "url": {
+              "raw": "{{int-url-np}}/oauth2/v1/clients/{{int-clientId-np}}",
+              "host": [
+                "{{int-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{int-clientId-np}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Client",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Generate New Client Secret",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}/lifecycle/newSecret",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}",
+                "lifecycle",
+                "newSecret"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prod-External",
+      "item": [
+        {
+          "name": "Get Logo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/.well-known/logo",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                ".well-known",
+                "logo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Clients",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{ext-apikey}}"
+              }
+            ],
+            "url": {
+              "raw": "{{ext-url}}/oauth2/v1/clients",
+              "host": [
+                "{{ext-url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{ext-apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\n    \"client_name\": \"Web client\",\n    \"redirect_uris\": [\n      \"https://httpbin.org/get\"\n    ],\n    \"response_types\": [\n      \"code\",\n      \"token\",\n      \"id_token\"\n    ],\n    \"grant_types\": [\n      \"refresh_token\",\n      \"authorization_code\",\n      \"implicit\"\n    ],\n    \"token_endpoint_auth_method\": \"client_secret_basic\",\n    \"application_type\": \"web\"\n  }"
+            },
+            "url": {
+              "raw": "{{ext-url-1}}/oauth2/v1/clients",
+              "host": [
+                "{{ext-url-1}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Client",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{ext-apikey}}"
+              }
+            ],
+            "url": {
+              "raw": "{{ext-url}}/oauth2/v1/clients/{{ext-clientId}}",
+              "host": [
+                "{{ext-url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{ext-clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Client",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"client_id\": \"{{clientId}}\",\n\t\"client_name\": \"Web client\",\n\t\"redirect_uris\": [\n\t\t\"https://httpbin.org/get\"\n\t],\n\t\"response_types\": [\n\t\t\"code\",\n\t\t\"token\",\n\t\t\"id_token\"\n\t],\n\t\"grant_types\": [\n\t\t\"refresh_token\",\n\t\t\"authorization_code\",\n\t\t\"implicit\"\n\t],\n\t\"token_endpoint_auth_method\": \"client_secret_basic\",\n\t\"application_type\": \"web\"\n}"
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Client",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Generate New Client Secret",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}/lifecycle/newSecret",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}",
+                "lifecycle",
+                "newSecret"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prod-Internal",
+      "item": [
+        {
+          "name": "Get Logo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/.well-known/logo",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                ".well-known",
+                "logo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Clients",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{int-apikey-np}}"
+              }
+            ],
+            "url": {
+              "raw": "{{int-url-np}}/oauth2/v1/clients",
+              "host": [
+                "{{int-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{int-apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\n    \"client_name\": \"Web client\",\n    \"redirect_uris\": [\n      \"https://httpbin.org/get\"\n    ],\n    \"response_types\": [\n      \"code\",\n      \"token\",\n      \"id_token\"\n    ],\n    \"grant_types\": [\n      \"refresh_token\",\n      \"authorization_code\",\n      \"implicit\"\n    ],\n    \"token_endpoint_auth_method\": \"client_secret_basic\",\n    \"application_type\": \"web\"\n  }"
+            },
+            "url": {
+              "raw": "{{int-url}}/oauth2/v1/clients",
+              "host": [
+                "{{int-url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Client",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{int-apikey}}"
+              }
+            ],
+            "url": {
+              "raw": "{{int-url-np}}/oauth2/v1/clients/{{int-clientId}}",
+              "host": [
+                "{{int-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{int-clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Client",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"client_id\": \"{{clientId}}\",\n\t\"client_name\": \"Web client\",\n\t\"redirect_uris\": [\n\t\t\"https://httpbin.org/get\"\n\t],\n\t\"response_types\": [\n\t\t\"code\",\n\t\t\"token\",\n\t\t\"id_token\"\n\t],\n\t\"grant_types\": [\n\t\t\"refresh_token\",\n\t\t\"authorization_code\",\n\t\t\"implicit\"\n\t],\n\t\"token_endpoint_auth_method\": \"client_secret_basic\",\n\t\"application_type\": \"web\"\n}"
+            },
+            "url": {
+              "raw": "{{int-url-np}}/oauth2/v1/clients/{{int-clientId-np}}",
+              "host": [
+                "{{int-url-np}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{int-clientId-np}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Client",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Generate New Client Secret",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "SSWS {{apikey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/oauth2/v1/clients/{{clientId}}/lifecycle/newSecret",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "oauth2",
+                "v1",
+                "clients",
+                "{{clientId}}",
+                "lifecycle",
+                "newSecret"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

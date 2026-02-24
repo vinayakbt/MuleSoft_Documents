@@ -1,0 +1,60 @@
+{
+  "info": {
+    "_postman_id": "a5bcb1cf-367e-4b23-9af8-b0a1039875ed",
+    "name": "Splunk_Logs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19948758"
+  },
+  "item": [
+    {
+      "name": "Send_Data_To_Splunk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Splunk a05af14e-0942-4ba6-97b4-cb11b4fc976d"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "session_id_8443=0152f355a67f5f4c28a11a9670f18ad6ce750ac0"
+          },
+          {
+            "key": "index",
+            "value": "metrics",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"source\":  \"metrics-source\",\n\t\"sourcetype\": \"_json\",\n\t//\"index\": \"metrics\", \n    \"index\": \"platform_benefits\",\n\t\"event\":  {\n    \"Date_Time\": \"03-03-2025 19:29:00\",\n    \"BusinessGouop\": \"3M Healthcare\",\n    \"Environment\": \"Prod\",\n    \"Region_Id\": \"us-east-1\",\n    \"Project1_Queues\": [\n      {\n        \"Queue_Id\": \"Q.SOLVENTUM.MULE.AUDIT.EVENTS.METADATA\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 920,\n        \"messagesReceived\": 916,\n        \"messagesAck\": 919,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-ASSET-DAM-REQ-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-ASSET-METADATA-ALG-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-ASSET-METADATA-PIM-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      }\n    ],\n    \"Project2_Queues\": [\n      {\n        \"Queue_Id\": \"SOLV-ASSET-METADATA-SF-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-COMMON-DELETE-COUNTRY-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-PIM-REQ-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-PRODUCT-COMMON-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-PRODUCT-EVENTS-QUEUE\",\n        \"messages_In_Queue\": 0,\n        \"messagesInFlight\": 0,\n        \"messagesVisible\": 0,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 0,\n        \"messagesAck\": 0,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      },\n      {\n        \"Queue_Id\": \"SOLV-PRODUCTS-SF-EVENTS-QUEUE\",\n        \"messages_In_Queue\": 12632,\n        \"messagesInFlight\": 41,\n        \"messagesVisible\": 12632,\n        \"messagesSent\": 0,\n        \"messagesReceived\": 320,\n        \"messagesAck\": 320,\n        \"Exchange_Id\": null,\n        \"messagesPublished\": 0,\n        \"messagesDelivered\": 0\n      }\n    ]\n\n    }\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://http-inputs-3mhealth.splunkcloud.com:443/services/collector/event",
+          "protocol": "https",
+          "host": [
+            "http-inputs-3mhealth",
+            "splunkcloud",
+            "com"
+          ],
+          "port": "443",
+          "path": [
+            "services",
+            "collector",
+            "event"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

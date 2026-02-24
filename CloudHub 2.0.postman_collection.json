@@ -1,0 +1,580 @@
+{
+  "info": {
+    "_postman_id": "6814c845-9e99-4298-ba9e-6e18549449ee",
+    "name": "CloudHub 2.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19948758"
+  },
+  "item": [
+    {
+      "name": "CH-2.0 PrivateSPace API's",
+      "item": [
+        {
+          "name": "CH-2.0 PrivateSPace API's",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{Bearer Token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/cloudhub2/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/applications/",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "cloudhub2",
+                "organizations",
+                "bd865388-5998-4b4c-b08c-71ffec24085e",
+                "environments",
+                "c4726b54-6003-45bc-b126-0169b6e2fc74",
+                "applications",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "URL-2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{Bearer Token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/amc/application-manager/api/v2/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/deployments/",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "amc",
+                "application-manager",
+                "api",
+                "v2",
+                "organizations",
+                "bd865388-5998-4b4c-b08c-71ffec24085e",
+                "environments",
+                "c4726b54-6003-45bc-b126-0169b6e2fc74",
+                "deployments",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer 043719df-a9e6-42a6-8846-8132f918ef39"
+              },
+              {
+                "key": "X-ANYPNT-ORG-ID",
+                "value": "bd865388-5998-4b4c-b08c-71ffec24085e"
+              },
+              {
+                "key": "X-ANYPNT-ENV-ID",
+                "value": "c4726b54-6003-45bc-b126-0169b6e2fc74"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/cloudhub2/organizationsbd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/applications/abc-sys-api",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "cloudhub2",
+                "organizationsbd865388-5998-4b4c-b08c-71ffec24085e",
+                "environments",
+                "c4726b54-6003-45bc-b126-0169b6e2fc74",
+                "applications",
+                "abc-sys-api"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "CH-2.0-API_List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-ANYPNT-ENV-ID",
+            "value": "c4726b54-6003-45bc-b126-0169b6e2fc74"
+          },
+          {
+            "key": "X-ANYPNT-ORG-ID",
+            "value": "bd865388-5998-4b4c-b08c-71ffec24085e"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 7e632353-136b-4721-9afe-16ecaeba1542"
+          }
+        ],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/{{org_id}}/environments/{{env_id}}/deployments/",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "{{org_id}}",
+            "environments",
+            "{{env_id}}",
+            "deployments",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Response-API_List",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-ANYPNT-ENV-ID",
+                "value": "c4726b54-6003-45bc-b126-0169b6e2fc74"
+              },
+              {
+                "key": "X-ANYPNT-ORG-ID",
+                "value": "bd865388-5998-4b4c-b08c-71ffec24085e"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer 7e632353-136b-4721-9afe-16ecaeba1542"
+              }
+            ],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/{{org_id}}/environments/{{env_id}}/deployments",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "hybrid",
+                "api",
+                "v2",
+                "organizations",
+                "{{org_id}}",
+                "environments",
+                "{{env_id}}",
+                "deployments"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2467"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 20 May 2025 16:55:45 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-anypnt-trx-id",
+              "value": "fa7c8"
+            },
+            {
+              "key": "X-Cache",
+              "value": "Miss from cloudfront"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 493929f1cd1a5c690fc8d2eaeb889872.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "X-Amz-Cf-Pop",
+              "value": "BOM78-P1"
+            },
+            {
+              "key": "X-Amz-Cf-Id",
+              "value": "AI5V3SISSee0u3UoQfx5US2C8AwbPBfRVMZKDJyRIhmCEro1yLYkKQ=="
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total\": 7,\n    \"items\": [\n        {\n            \"id\": \"080512b7-926b-4a2e-b305-1bf6cb2b9d36\",\n            \"name\": \"test-anypointmq-ch2\",\n            \"creationDate\": 1745841562075,\n            \"lastModifiedDate\": 1745841742137,\n            \"target\": {\n                \"provider\": \"MC\",\n                \"targetId\": \"cloudhub-us-east-1\"\n            },\n            \"status\": \"APPLIED\",\n            \"application\": {\n                \"status\": \"RUNNING\"\n            },\n            \"currentRuntimeVersion\": \"4.9.3:3-java17\",\n            \"lastSuccessfulRuntimeVersion\": \"4.9.3:3-java17\"\n        },\n        {\n            \"id\": \"ebe3ea58-b261-4990-b460-c8ee5efb6225\",\n            \"name\": \"test-ch2-poc-api\",\n            \"creationDate\": 1745931183066,\n            \"lastModifiedDate\": 1745931259509,\n            \"target\": {\n                \"provider\": \"MC\",\n                \"targetId\": \"cloudhub-us-east-1\"\n            },\n            \"status\": \"APPLIED\",\n            \"application\": {\n                \"status\": \"RUNNING\"\n            },\n            \"currentRuntimeVersion\": \"4.9.3:3-java17\",\n            \"lastSuccessfulRuntimeVersion\": \"4.9.3:3-java17\"\n        },\n        {\n            \"id\": \"982b6a13-a71e-42d3-8157-2ff45ae2e1b4\",\n            \"name\": \"dev-mule-event-demo\",\n            \"creationDate\": 1746213646276,\n            \"lastModifiedDate\": 1746856366544,\n            \"target\": {\n                \"provider\": \"MC\",\n                \"targetId\": \"cloudhub-us-east-2\"\n            },\n            \"status\": \"APPLIED\",\n            \"application\": {\n                \"status\": \"RUNNING\"\n            },\n            \"currentRuntimeVersion\": \"4.9.0:7-java17\",\n            \"lastSuccessfulRuntimeVersion\": \"4.9.0:7-java17\"\n        },\n        {\n            \"id\": \"011bda3b-284a-4c9c-b670-834e8a454807\",\n            \"name\": \"dev-o2c-cc-detokenize-sys-api\",\n            \"creationDate\": 1746445154833,\n            \"lastModifiedDate\": 1747673805736,\n            \"target\": {\n                \"provider\": \"MC\",\n                \"targetId\": \"47f955d8-a4a3-4ff4-b280-7192cabc86c5\"\n            },\n            \"status\": \"APPLIED\",\n            \"application\": {\n                \"status\": \"RUNNING\"\n            },\n            \"currentRuntimeVersion\": \"4.9.3:3e-java17\",\n            \"lastSuccessfulRuntimeVersion\": \"4.9.3:3e-java17\"\n        },\n        {\n            \"id\": \"169f62f4-79d1-423b-8c7b-e20a0fcbcce5\",\n            \"name\": \"dev-mule-event-demo-poc\",\n            \"creationDate\": 1746616446726,\n            \"lastModifiedDate\": 1747673755753,\n            \"target\": {\n                \"provider\": \"MC\",\n                \"targetId\": \"47f955d8-a4a3-4ff4-b280-7192cabc86c5\"\n            },\n            \"status\": \"APPLIED\",\n            \"application\": {\n                \"status\": \"RUNNING\"\n            },\n            \"currentRuntimeVersion\": \"4.9.0:7-java17\",\n            \"lastSuccessfulRuntimeVersion\": \"4.9.0:7-java17\"\n        },\n        {\n            \"id\": \"c68a6956-3c6b-42b2-9938-cec87b7a1125\",\n            \"name\": \"dev-o2c-ups-tracking-prc-api\",\n            \"creationDate\": 1747033881551,\n            \"lastModifiedDate\": 1747675875538,\n            \"target\": {\n                \"provider\": \"MC\",\n                \"targetId\": \"cloudhub-us-east-2\"\n            },\n            \"status\": \"APPLIED\",\n            \"application\": {\n                \"status\": \"RUNNING\"\n            },\n            \"currentRuntimeVersion\": \"4.9.0:7-java17\",\n            \"lastSuccessfulRuntimeVersion\": \"4.9.0:7-java17\"\n        },\n        {\n            \"id\": \"6c3e2cc8-71b9-426c-8c66-3f05880bfe01\",\n            \"name\": \"dev-o2c-pa-clinical-wa-sys-api\",\n            \"creationDate\": 1747251539852,\n            \"lastModifiedDate\": 1747251912329,\n            \"target\": {\n                \"provider\": \"MC\",\n                \"targetId\": \"cloudhub-us-east-2\"\n            },\n            \"status\": \"APPLIED\",\n            \"application\": {\n                \"status\": \"NOT_RUNNING\"\n            },\n            \"currentRuntimeVersion\": \"4.9.0:7-java17\",\n            \"lastSuccessfulRuntimeVersion\": \"4.9.0:7-java17\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "CH-2.0-API-Id",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-ANYPNT-ENV-ID",
+            "value": "c4726b54-6003-45bc-b126-0169b6e2fc74",
+            "disabled": true
+          },
+          {
+            "key": "X-ANYPNT-ORG-ID",
+            "value": "bd865388-5998-4b4c-b08c-71ffec24085e",
+            "disabled": true
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer d9428375-cba4-456e-bb88-f53a7d1fd0d6"
+          },
+          {
+            "key": "Cookie",
+            "value": "XSRF-TOKEN=LS7Y1OcK-e7EbAu_n2dpE5MJjPx1zSHdanQU; _csrf=fe7g9-KUvzT0jyXM3QlgA0bt"
+          }
+        ],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/deployments/169f62f4-79d1-423b-8c7b-e20a0fcbcce5",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "bd865388-5998-4b4c-b08c-71ffec24085e",
+            "environments",
+            "c4726b54-6003-45bc-b126-0169b6e2fc74",
+            "deployments",
+            "169f62f4-79d1-423b-8c7b-e20a0fcbcce5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "API-ID_response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-ANYPNT-ENV-ID",
+                "value": "c4726b54-6003-45bc-b126-0169b6e2fc74"
+              },
+              {
+                "key": "X-ANYPNT-ORG-ID",
+                "value": "bd865388-5998-4b4c-b08c-71ffec24085e"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer 7e632353-136b-4721-9afe-16ecaeba1542"
+              },
+              {
+                "key": "Cookie",
+                "value": "XSRF-TOKEN=LS7Y1OcK-e7EbAu_n2dpE5MJjPx1zSHdanQU; _csrf=fe7g9-KUvzT0jyXM3QlgA0bt"
+              }
+            ],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/deployments/982b6a13-a71e-42d3-8157-2ff45ae2e1b4",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "hybrid",
+                "api",
+                "v2",
+                "organizations",
+                "bd865388-5998-4b4c-b08c-71ffec24085e",
+                "environments",
+                "c4726b54-6003-45bc-b126-0169b6e2fc74",
+                "deployments",
+                "982b6a13-a71e-42d3-8157-2ff45ae2e1b4"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1835"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 20 May 2025 16:59:00 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-anypnt-trx-id",
+              "value": "6b352"
+            },
+            {
+              "key": "X-Cache",
+              "value": "Miss from cloudfront"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 a8ca4aee08b2f5c8f93f1ff2ca028ece.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "X-Amz-Cf-Pop",
+              "value": "BOM78-P1"
+            },
+            {
+              "key": "X-Amz-Cf-Id",
+              "value": "a2l52UdR3YvH0gXYpz0Wi_yAptxeJNtoT5YHsrxqdfXVY-6Wv-KR2Q=="
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"982b6a13-a71e-42d3-8157-2ff45ae2e1b4\",\n    \"name\": \"dev-mule-event-demo\",\n    \"creationDate\": 1746213646276,\n    \"lastModifiedDate\": 1746856366544,\n    \"target\": {\n        \"provider\": \"MC\",\n        \"targetId\": \"cloudhub-us-east-2\",\n        \"deploymentSettings\": {\n            \"clustered\": false,\n            \"enforceDeployingReplicasAcrossNodes\": false,\n            \"http\": {\n                \"inbound\": {\n                    \"publicUrl\": \"https://dev-mule-event-demo-pr7vyp.5sc6y6-3.usa-e2.cloudhub.io\"\n                }\n            },\n            \"runtimeVersion\": \"4.9.0:7-java17\",\n            \"runtimeReleaseChannel\": \"LTS\",\n            \"updateStrategy\": \"rolling\",\n            \"lastMileSecurity\": false,\n            \"disableAmLogForwarding\": false,\n            \"anypointMonitoringScope\": \"app\",\n            \"sidecars\": {\n                \"anypoint-monitoring\": {\n                    \"image\": \"auto\",\n                    \"resources\": {\n                        \"cpu\": {\n                            \"limit\": \"50m\",\n                            \"reserved\": \"0m\"\n                        },\n                        \"memory\": {\n                            \"limit\": \"50Mi\",\n                            \"reserved\": \"50Mi\"\n                        }\n                    }\n                }\n            },\n            \"forwardSslSession\": false,\n            \"generateDefaultPublicUrl\": false,\n            \"runtime\": {\n                \"version\": \"4.9.0:7-java17\",\n                \"releaseChannel\": \"LTS\",\n                \"java\": \"17\"\n            }\n        },\n        \"replicas\": 1\n    },\n    \"status\": \"APPLIED\",\n    \"application\": {\n        \"status\": \"RUNNING\",\n        \"desiredState\": \"STARTED\",\n        \"ref\": {\n            \"groupId\": \"bd865388-5998-4b4c-b08c-71ffec24085e\",\n            \"artifactId\": \"mule-event-demo\",\n            \"version\": \"1.0.0-SNAPSHOT\",\n            \"packaging\": \"jar\"\n        },\n        \"configuration\": {\n            \"mule.agent.application.properties.service\": {\n                \"applicationName\": \"dev-mule-event-demo\",\n                \"properties\": {\n                    \"anypoint.platform.client_id\": \"ac63ff63f64f49f7a9b8c0584ebe8fa2\",\n                    \"splunkEnv\": \"Dev\",\n                    \"anypoint.platform.client_secret\": \"9dB3d21E1f6B486AA4ee75D1053Bfe17\",\n                    \"appName\": \"mule-event-demo\",\n                    \"mule_target_env\": \"Dev\",\n                    \"secret.key\": \"ACELITYADVCENTER\",\n                    \"splunkToken\": \"94097819-df26-4718-b484-2d462907eb1c\",\n                    \"splunkIndex\": \"mulesoft_kci_np-shi\"\n                }\n            }\n        },\n        \"vCores\": 0.1\n    },\n    \"desiredVersion\": \"a48b1101-9475-4d51-94dd-8c38ea8a8756\",\n    \"replicas\": [\n        {\n            \"id\": \"dev-mule-event-demo-fb6b6bc68-wdbft\",\n            \"state\": \"STARTED\",\n            \"deploymentLocation\": \"cloudhub-us-east-2\",\n            \"currentDeploymentVersion\": \"a48b1101-9475-4d51-94dd-8c38ea8a8756\",\n            \"reason\": \"\"\n        }\n    ],\n    \"lastSuccessfulVersion\": \"a48b1101-9475-4d51-94dd-8c38ea8a8756\"\n}"
+        },
+        {
+          "name": "Erro-response-PS-API",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-ANYPNT-ENV-ID",
+                "value": "c4726b54-6003-45bc-b126-0169b6e2fc74"
+              },
+              {
+                "key": "X-ANYPNT-ORG-ID",
+                "value": "bd865388-5998-4b4c-b08c-71ffec24085e"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer 7e632353-136b-4721-9afe-16ecaeba1542"
+              },
+              {
+                "key": "Cookie",
+                "value": "XSRF-TOKEN=LS7Y1OcK-e7EbAu_n2dpE5MJjPx1zSHdanQU; _csrf=fe7g9-KUvzT0jyXM3QlgA0bt"
+              }
+            ],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/deployments/169f62f4-79d1-423b-8c7b-e20a0fcbcce5",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "hybrid",
+                "api",
+                "v2",
+                "organizations",
+                "bd865388-5998-4b4c-b08c-71ffec24085e",
+                "environments",
+                "c4726b54-6003-45bc-b126-0169b6e2fc74",
+                "deployments",
+                "169f62f4-79d1-423b-8c7b-e20a0fcbcce5"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "290"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 20 May 2025 17:02:32 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-anypnt-trx-id",
+              "value": "df489"
+            },
+            {
+              "key": "X-Cache",
+              "value": "Error from cloudfront"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 a8ca4aee08b2f5c8f93f1ff2ca028ece.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "X-Amz-Cf-Pop",
+              "value": "BOM78-P1"
+            },
+            {
+              "key": "X-Amz-Cf-Id",
+              "value": "3HpxdM-gPtg6uPLJFgnz3DNa-Y63GML9AoELOxtrM2cVPlBA9ie2bg=="
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"timestamp\": 1747760552627,\n    \"status\": 409,\n    \"error\": \"Conflict\",\n    \"message\": \"Unable to fetch the target associated with this deployment\",\n    \"path\": \"/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/deployments/169f62f4-79d1-423b-8c7b-e20a0fcbcce5\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Authentication_Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "XSRF-TOKEN=LS7Y1OcK-e7EbAu_n2dpE5MJjPx1zSHdanQU; _csrf=fe7g9-KUvzT0jyXM3QlgA0bt"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \n  \"client_id\"  : \"710d81b6521f4a848fe03ed853975a57\",\n  \"client_secret\" : \"4088CbEDB49C4ACcbEAA814d80390Fe4\",\n    \"grant_type\"    : \"client_credentials\"  \n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "accounts",
+            "api",
+            "v2",
+            "oauth2",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/cloudhub2/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments/c4726b54-6003-45bc-b126-0169b6e2fc74/deployments/011bda3b-284a-4c9c-b670-834e8a454807",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "cloudhub2",
+            "organizations",
+            "bd865388-5998-4b4c-b08c-71ffec24085e",
+            "environments",
+            "c4726b54-6003-45bc-b126-0169b6e2fc74",
+            "deployments",
+            "011bda3b-284a-4c9c-b670-834e8a454807"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

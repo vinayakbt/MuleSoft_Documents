@@ -1,0 +1,372 @@
+{
+  "info": {
+    "_postman_id": "f5e63c67-4572-4ac6-9885-d81ce1dc935f",
+    "name": "Anypoint MQ",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19948758"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n// For KCI   : \"getCloudhubApps\"\r\n\"client_id\"     : \"6d374579c1fb4c97b893d9a23e66e462\",\r\n\"client_secret\" : \"30548543f8a24E7383eeB443b4e75c74\",\r\n//  For KCI : list_api\r\n//  Client Id  : \"710d81b6521f4a848fe03ed853975a57\",\r\n//  Client Secret : \"4088CbEDB49C4ACcbEAA814d80390Fe4\",\r\n // For HC-Solventum EDI  : 3MHC-EDI\r\n //\"client_id\"  : \"4c2a296f42274dd9ad9437c5c66042d8\",\r\n // \"client_secret\" : \"7aa2a7dE37744891a177E4231Db8B349\",\r\n  // For SOlventum EDI  : readEDIApps\r\n//  \"client_id\"  : \"603f70f5372f4c2398d43d42d7a79076\",\r\n//  \"client_secret\" : \"5Bf357eE4Eaf4e5Ea8166483d2a62E4f\",\r\n //  For HelthCare  : \"3mHealthcareDeploy\"\r\n //   \"client_id\"     : \"a511436f1630417ab207da54e7274c85\",\r\n //   \"client_secret\" : \"1bF0c235a5ae497Fb7739894cC9112D8\",\r\n    \"grant_type\"    : \"client_credentials\"  \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "accounts",
+            "api",
+            "v2",
+            "oauth2",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api-call-mq-regions-flow",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/mq/admin/api/v1/organizations/{{orgId}}/environments/{{envId}}/regions",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "mq",
+            "admin",
+            "api",
+            "v1",
+            "organizations",
+            "{{orgId}}",
+            "environments",
+            "{{envId}}",
+            "regions"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "api-call-mq-regions-flow",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/mq/admin/api/v1/organizations/{{orgId}}/environments/{{envId}}/regions",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "mq",
+                "admin",
+                "api",
+                "v1",
+                "organizations",
+                "{{orgId}}",
+                "environments",
+                "{{envId}}",
+                "regions"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Authorization, Origin, X-Requested-With, Content-Type, Accept"
+            },
+            {
+              "key": "access-control-allow-methods",
+              "value": "POST, GET, PUT, OPTIONS, DELETE"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-max-age",
+              "value": "3600"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 22 Feb 2025 17:36:13 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "nginx"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "x-anypnt-trx-id",
+              "value": "c065a0cb-fced-4aa2-88f8-1552ec4068d9"
+            },
+            {
+              "key": "x-ratelimit-organization-limit",
+              "value": "250"
+            },
+            {
+              "key": "x-ratelimit-organization-remaining",
+              "value": "249"
+            },
+            {
+              "key": "x-ratelimit-organization-reset",
+              "value": "1740245774533"
+            },
+            {
+              "key": "x-request-id",
+              "value": "92ebd663-93c3-451b-a87d-4babdb6aba78"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1858"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"regionId\": \"us-east-1\",\n        \"regionName\": \"US East (N. Virginia)\",\n        \"serviceUrl\": \"https://mq-us-east-1.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"us-east-2\"\n    },\n    {\n        \"regionId\": \"us-east-2\",\n        \"regionName\": \"US East (Ohio)\",\n        \"serviceUrl\": \"https://mq-us-east-2.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"us-west-2\"\n    },\n    {\n        \"regionId\": \"us-west-2\",\n        \"regionName\": \"US West (Oregon)\",\n        \"serviceUrl\": \"https://mq-us-west-2.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"ca-central-1\"\n    },\n    {\n        \"regionId\": \"ca-central-1\",\n        \"regionName\": \"Canada (Central)\",\n        \"serviceUrl\": \"https://mq-ca-central-1.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"us-east-1\"\n    },\n    {\n        \"regionId\": \"eu-west-1\",\n        \"regionName\": \"EU (Ireland)\",\n        \"serviceUrl\": \"https://mq-eu-west-1.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"eu-west-2\"\n    },\n    {\n        \"regionId\": \"eu-west-2\",\n        \"regionName\": \"EU (London)\",\n        \"serviceUrl\": \"https://mq-eu-west-2.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"eu-west-1\"\n    },\n    {\n        \"regionId\": \"ap-southeast-1\",\n        \"regionName\": \"Asia Pacific (Singapore)\",\n        \"serviceUrl\": \"https://mq-ap-southeast-1.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"ap-northeast-1\"\n    },\n    {\n        \"regionId\": \"ap-southeast-2\",\n        \"regionName\": \"Asia Pacific (Sydney)\",\n        \"serviceUrl\": \"https://mq-ap-southeast-2.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"ap-southeast-1\"\n    },\n    {\n        \"regionId\": \"ap-northeast-1\",\n        \"regionName\": \"Asia Pacific (Tokyo)\",\n        \"serviceUrl\": \"https://mq-ap-northeast-1.anypoint.mulesoft.com/api/v1\",\n        \"fifoAvailable\": true,\n        \"fallbackRegion\": \"ap-southeast-2\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "api-call-mq-destinations-flow",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/mq/admin/api/v1/organizations/{{orgId}}/environments/{{envId}}/regions/{{regionId}}/destinations",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "mq",
+            "admin",
+            "api",
+            "v1",
+            "organizations",
+            "{{orgId}}",
+            "environments",
+            "{{envId}}",
+            "regions",
+            "{{regionId}}",
+            "destinations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api-call-mq-queue-stats-flow",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "b0c8790c-dfe6-4a17-825b-69385b6051db",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/mq/admin/api/v1/organizations/{{orgId}}/environments/{{envId}}/regions/",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "mq",
+            "admin",
+            "api",
+            "v1",
+            "organizations",
+            "{{orgId}}",
+            "environments",
+            "{{envId}}",
+            "regions",
+            ""
+          ],
+          "query": [
+            {
+              "key": "period",
+              "value": "8640",
+              "disabled": true
+            },
+            {
+              "key": "startDate",
+              "value": "Mon, 19 Jan 2025 18:22:03 GMT",
+              "disabled": true
+            },
+            {
+              "key": "endDate",
+              "value": "\"Mon, 20 Jan 2025 18:22:03 GMT\"",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mq-us-east-1.anypoint.mulesoft.com/api/v1/organizations/{{orgId}}/environments/{{envId}}/destinations",
+          "protocol": "https",
+          "host": [
+            "mq-us-east-1",
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "organizations",
+            "{{orgId}}",
+            "environments",
+            "{{envId}}",
+            "destinations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "mq/stats",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer Token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/mq/stats/api/v1/organizations/b6a142f8-e70f-4d6d-bd40-3d969d5d75e6/environments/c958da1c-bde1-4f88-b768-0cbfe60326ee/regions/us-east-1/queues/Q.SOLVENTUM.MULE.AUDIT.EVENTS.METADATA?startDate=Thu%2C%2027%20Feb%202025%2006%3A23%3A36%20GMT&endDate=Thu%2C%2027%20Feb%202025%2007%3A23%3A36%20GMT&period=360",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "mq",
+            "stats",
+            "api",
+            "v1",
+            "organizations",
+            "b6a142f8-e70f-4d6d-bd40-3d969d5d75e6",
+            "environments",
+            "c958da1c-bde1-4f88-b768-0cbfe60326ee",
+            "regions",
+            "us-east-1",
+            "queues",
+            "Q.SOLVENTUM.MULE.AUDIT.EVENTS.METADATA"
+          ],
+          "query": [
+            {
+              "key": "startDate",
+              "value": "Thu%2C%2027%20Feb%202025%2006%3A23%3A36%20GMT"
+            },
+            {
+              "key": "endDate",
+              "value": "Thu%2C%2027%20Feb%202025%2007%3A23%3A36%20GMT"
+            },
+            {
+              "key": "period",
+              "value": "360"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "info": {
+    "_postman_id": "211f4a48-4611-46b9-89e6-77a2041757a8",
+    "name": "Platform_Montoring_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19948758"
+  },
+  "item": [
+    {
+      "name": "runtime-fabrics",
+      "item": [
+        {
+          "name": "Runtime Fabrics",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://anypoint.mulesoft.com/runtimefabric/api/organizations/{{org_id}}/fabrics/",
+              "protocol": "https",
+              "host": [
+                "anypoint",
+                "mulesoft",
+                "com"
+              ],
+              "path": [
+                "runtimefabric",
+                "api",
+                "organizations",
+                "{{org_id}}",
+                "fabrics",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Get_Bearer_Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    //  For KCI : list_api\r\n // \"client_id\"  : \"710d81b6521f4a848fe03ed853975a57\",\r\n // \"client_secret\" : \"4088CbEDB49C4ACcbEAA814d80390Fe4\",\r\n// For KCI   : \"getCloudhubApps\"\r\n// \"client_id\"     : \"6d374579c1fb4c97b893d9a23e66e462\",\r\n //\"client_secret\" : \"30548543f8a24E7383eeB443b4e75c74\",\r\n\r\n // For HC-Solventum EDI  : 3MHC-EDI\r\n  \"client_id\"  : \"4c2a296f42274dd9ad9437c5c66042d8\",\r\n  \"client_secret\" : \"7aa2a7dE37744891a177E4231Db8B349\",\r\n\r\n  // For SOlventum EDI  : readEDIApps\r\n//  \"client_id\"  : \"603f70f5372f4c2398d43d42d7a79076\",\r\n//  \"client_secret\" : \"5Bf357eE4Eaf4e5Ea8166483d2a62E4f\",\r\n\r\n //  For HelthCare  : \"3mHealthcareDeploy\"\r\n //   \"client_id\"     : \"a511436f1630417ab207da54e7274c85\",\r\n //   \"client_secret\" : \"1bF0c235a5ae497Fb7739894cC9112D8\",\r\n    \"grant_type\"    : \"client_credentials\"  \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "accounts",
+            "api",
+            "v2",
+            "oauth2",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get_BG/ORG_Names",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "c6e90ce9-6511-4077-872d-2a8fd3578513",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/accounts/api/me",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "accounts",
+            "api",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get_ENV_Names",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "e21bc663-478d-4b58-a59c-c238388978ff",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/accounts/api/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/environments",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "accounts",
+            "api",
+            "organizations",
+            "bd865388-5998-4b4c-b08c-71ffec24085e",
+            "environments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get_Applications",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/cloudhub/api/v2/organizations/{{org_id}}/environments/{{env_id}}/applications",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "cloudhub",
+            "api",
+            "v2",
+            "organizations",
+            "{{org_id}}",
+            "environments",
+            "{{env_id}}",
+            "applications"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get_API_Details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"name\":\"hello-world-qa-rtf\",\r\n   \"target\":{\r\n      \"deploymentSettings\":{\r\n        //  \"runtimeVersion\":\"4.6.3:4\",\r\n        //  \"replicationFactor\":2,\r\n        //  \"memoryReserved\":\"700Mi\",\r\n        //  \"memoryMax\":\"900Mi\",\r\n        //  \"cpuReserved\":\"300m\",\r\n        //  \"cpuMax\":\"500m\",\r\n        // \"publicUrl\":\"http://uat-api-int.3mhealth.com/hello_world\",\r\n         \"http\": {\r\n                \"inbound\": {\r\n                    \"publicUrl\": \"http://qa-edi-api.3mhealth.com/hello_world\"\r\n                   \r\n                }\r\n            }\r\n        //  \"lastMileSecurity\":false,\r\n        //  \"clusteringEnabled\": true,\r\n        //  \"enforceDeployingReplicasAcrossNodes\": true,\r\n        //  \"persistentObjectStore\": true,\r\n        //    \"clustered\": true\r\n      }\r\n   }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/{{org_id}}/environments/{{env_id}}/deployments/{{app_id}}",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "{{org_id}}",
+            "environments",
+            "{{env_id}}",
+            "deployments",
+            "{{app_id}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RTF_Cluster_Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RTF_Agent_Details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "authorization",
+            "value": "Bearer {$BEARER_TOKEN}"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-ANYPNT-ENV-ID",
+            "value": "{$ENVIRONMENT_ID}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8081/dev",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "dev"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request GET /\r\n --header 'authorization: Bearer {$BEARER_TOKEN}' /\r\n --header 'content-type: application/json' /\r\n --header 'X-ANYPNT-ENV-ID: {$ENVIRONMENT_ID}' /\r\n 'https://anypoint.mulesoft.com/cloudhub/api/v2/applications/{$APPLICATION_NAME}/deployments'"
+      },
+      "response": []
+    },
+    {
+      "name": "USAGE",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "f3e4cf76-ba50-4ae8-b7c2-0473437000bf",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/cloudhub/api/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/usage",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "cloudhub",
+            "api",
+            "organizations",
+            "bd865388-5998-4b4c-b08c-71ffec24085e",
+            "usage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User_By_Role",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 0b838161-40eb-49d5-9298-86d5fb043c44"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/accounts/api/organizations/bd865388-5998-4b4c-b08c-71ffec24085e/roles/{roleId}/users",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "accounts",
+            "api",
+            "organizations",
+            "bd865388-5998-4b4c-b08c-71ffec24085e",
+            "roles",
+            "{roleId}",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "org_id",
+      "value": "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+      "type": "default"
+    },
+    {
+      "key": "access_token",
+      "value": "862ee0d0-56d1-48ec-b681-cfa7d11440a9",
+      "type": "default"
+    }
+  ]
+}

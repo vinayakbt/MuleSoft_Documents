@@ -1,0 +1,308 @@
+{
+  "info": {
+    "_postman_id": "26d13c59-b0fe-4058-9b98-f5fe36e9ee57",
+    "name": "RTF-Re-Deploy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19948758"
+  },
+  "item": [
+    {
+      "name": "Re-Deployment",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          },
+          {
+            "key": "X-ANYPNT-ENV-ID",
+            "value": "{{envId}}"
+          },
+          {
+            "key": "X-ANYPNT-ORG-ID",
+            "value": "{{orgId}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"name\":\"{{applicationName}}\",\n   \"application\":{\n      \"ref\":{\n         \"groupId\":\"{{orgId}}\",\n         \"artifactId\":\"{{applicationName}}\",\n         \"version\":\"{{applicationVersion}}\",\n         \"packaging\":\"jar\"\n      },\n      \"desiredState\":\"STARTED\",\n      \"configuration\":{\n         \"mule.agent.application.properties.service\":{\n            \"properties\":{\n               \"mule.env\":\"dev\",\n               \"name\":\"none\",\n               \"key\":\"12345\"\n            },\n            \"applicationName\":\"{{applicationName}}\"\n         }\n      }\n   },\n\n   \"target\":{\n      \"targetId\":\"{{targetId}}\",\n      \"provider\":\"MC\",\n      \"deploymentSettings\":{\n         //\"runtimeVersion\":\"4.6.3:4\",\n         //\"replicationFactor\":2,\n        // \"memoryReserved\":\"700Mi\",\n        // \"memoryMax\":\"900Mi\",\n        // \"cpuReserved\":\"300m\",\n        // \"cpuMax\":\"500m\",\n       //  \"publicUrl\":\"https://{{RTFCNAME}}/{{applicationName}}\",\n       \"http\": {\n                \"inbound\": {\n                    \"publicUrl\": \"http://qa-api.3mhealth.com/helloworld-api,http://dev-api-int.3mhealth.com/helloworld-api, http://dev-api.3mhealth.com/helloworld-api\",\n                    \"uniqueId\": \"i5n6cj\"\n                }\n            },\n         \"lastMileSecurity\":false,\n         \"clusteringEnabled\": true,\n         \"enforceDeployingReplicasAcrossNodes\": true,\n         \"persistentObjectStore\": true,\n           \"clustered\": true\n      },\n      \"replicas\": 2\n   }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/{{orgId}}/environments/{{envId}}/deployments/{{deploymentId}}",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "{{orgId}}",
+            "environments",
+            "{{envId}}",
+            "deployments",
+            "{{deploymentId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Re-Deployment Copy",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 182521ec-6cf4-45bf-9f23-c8f015fa5fcf"
+          },
+          {
+            "key": "X-ANYPNT-ENV-ID",
+            "value": "95d3c7ce-20af-4d40-b534-8de3b3b3867b"
+          },
+          {
+            "key": "X-ANYPNT-ORG-ID",
+            "value": "b6a142f8-e70f-4d6d-bd40-3d969d5d75e6"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "XSRF-TOKEN=IqQ4gxAu-zf75iEQDogEv97XaPv1Bld6pPHw; _csrf=a0SZNYXp4F-WRoYj5DzAObey"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"name\":\"helloworld-api\",\n   \"application\":{\n      \"ref\":{\n         \"groupId\":\"b6a142f8-e70f-4d6d-bd40-3d969d5d75e6\",\n         \"artifactId\":\"helloworld-api\",\n         \"version\":\"3.6.0-504273\",\n         \"packaging\":\"jar\"\n      },\n      \"desiredState\":\"STARTED\",\n      \"configuration\":{\n         \"mule.agent.application.properties.service\":{\n            \"properties\":{\n               \"mule.env\":\"dev\",\n               \"name\":\"none\",\n               \"key\":\"12345\"\n            },\n            \"applicationName\":\"helloworld-api\"\n         }\n      }\n   },\n \n   \"target\":{\n      \"targetId\":\"301fbcea-99e7-4764-99ab-6ddf9cc39c45\",\n      \"provider\":\"MC\",\n      \"deploymentSettings\":{\n         \"runtimeVersion\":\"4.6.3:4\",\n         \"replicationFactor\":2,\n         \"memoryReserved\":\"700Mi\",\n         \"memoryMax\":\"900Mi\",\n         \"cpuReserved\":\"300m\",\n         \"cpuMax\":\"500m\",\n         \"publicUrl\":\"https://dev-api-int.3mhealth.com/helloworld-api\",\n         \"lastMileSecurity\":false,\n         \"clusteringEnabled\": true,\n         \"enforceDeployingReplicasAcrossNodes\": true,\n         \"persistentObjectStore\": true,\n           \"clustered\": true\n      },\n      \"replicas\": 3\n   }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/b6a142f8-e70f-4d6d-bd40-3d969d5d75e6/environments/95d3c7ce-20af-4d40-b534-8de3b3b3867b/deployments/04262d04-3388-43a9-82f9-6574cdb4816f",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "b6a142f8-e70f-4d6d-bd40-3d969d5d75e6",
+            "environments",
+            "95d3c7ce-20af-4d40-b534-8de3b3b3867b",
+            "deployments",
+            "04262d04-3388-43a9-82f9-6574cdb4816f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get-Deployments",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Ingress_Update_Working",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "33cb4699-a364-42f4-a833-0dd959a9d1b8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 33cb4699-a364-42f4-a833-0dd959a9d1b8"
+          },
+          {
+            "key": "X-ANYPNT-ENV-ID",
+            "value": "95d3c7ce-20af-4d40-b534-8de3b3b3867b"
+          },
+          {
+            "key": "X-ANYPNT-ORG-ID",
+            "value": "b6a142f8-e70f-4d6d-bd40-3d969d5d75e6"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "XSRF-TOKEN=IqQ4gxAu-zf75iEQDogEv97XaPv1Bld6pPHw; _csrf=a0SZNYXp4F-WRoYj5DzAObey"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"name\":\"qa-b2b-inbound-as2-pnlz\",\n   \"target\":{\n      \"deploymentSettings\":{\n      \n         \"http\": {\n                \"inbound\": {\n                    //\"publicUrl\": \"http://qa-edi-apigateway.solventum.com/edi/apm/v1\",\n                    \"publicUrl\": \"http://qa-edi-apigateway.solventum.com/receive-as2\"\n                    \n                }\n            }\n      \n      }\n   }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/f16a56ca-8809-4d44-bc90-d9233666e7cb/deployments/ac4e2881-0da8-43ca-8c38-6c95a5d8ca34",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "f16a56ca-8809-4d44-bc90-d9233666e7cb",
+            "deployments",
+            "ac4e2881-0da8-43ca-8c38-6c95a5d8ca34"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ingress_Update_Working Copy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "33cb4699-a364-42f4-a833-0dd959a9d1b8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 182521ec-6cf4-45bf-9f23-c8f015fa5fcf"
+          },
+          {
+            "key": "X-ANYPNT-ENV-ID",
+            "value": "95d3c7ce-20af-4d40-b534-8de3b3b3867b"
+          },
+          {
+            "key": "X-ANYPNT-ORG-ID",
+            "value": "b6a142f8-e70f-4d6d-bd40-3d969d5d75e6"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "XSRF-TOKEN=IqQ4gxAu-zf75iEQDogEv97XaPv1Bld6pPHw; _csrf=a0SZNYXp4F-WRoYj5DzAObey"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"name\":\"helloworld-api\",\n   \"target\":{\n      \"deploymentSettings\":{\n        //  \"runtimeVersion\":\"4.6.3:4\",\n        //  \"replicationFactor\":2,\n        //  \"memoryReserved\":\"700Mi\",\n        //  \"memoryMax\":\"900Mi\",\n        //  \"cpuReserved\":\"300m\",\n        //  \"cpuMax\":\"500m\",\n        // \"publicUrl\":\"http://uat-api-int.3mhealth.com/hello_world\",\n         \"http\": {\n                \"inbound\": {\n                    \"publicUrl\": \"http://qa-api.3mhealth.com/hello_world\",\n                    \"uniqueId\": \"i5n6cj\"\n                }\n            }\n        //  \"lastMileSecurity\":false,\n        //  \"clusteringEnabled\": true,\n        //  \"enforceDeployingReplicasAcrossNodes\": true,\n        //  \"persistentObjectStore\": true,\n        //    \"clustered\": true\n      }\n   }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/hybrid/api/v2/organizations/4340b00a-36be-4b57-904a-3e1cf4b3a505/environments/f16a56ca-8809-4d44-bc90-d9233666e7cb/deployments/f93f08d2-3953-4bf9-aab9-a88a27adb865",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "hybrid",
+            "api",
+            "v2",
+            "organizations",
+            "4340b00a-36be-4b57-904a-3e1cf4b3a505",
+            "environments",
+            "f16a56ca-8809-4d44-bc90-d9233666e7cb",
+            "deployments",
+            "f93f08d2-3953-4bf9-aab9-a88a27adb865"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ingress_update",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 33cb4699-a364-42f4-a833-0dd959a9d1b8"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"domain\": \"helloworld-api\",\r\n  \"deploymentTargetId\": \"301fbcea-99e7-4764-99ab-6ddf9cc39c45\",\r\n  \"desiredState\": \"STARTED\",\r\n  \"muleVersion\": {\r\n    \"version\": \"4.6.3:4-java8\"\r\n  },\r\n  \"replicas\": 2,\r\n  \"properties\": {\r\n    \"name\": \"none\",\r\n    \"mule.env\": \"dev\",\r\n    \"key\": \"12345\"\r\n  },\r\n  \"ingress\": {\r\n    \"ingressUrl\": \"http://qa-api.3mhealth.com\",\r\n    \"path\": \"/helloworld-api\"\r\n  }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://anypoint.mulesoft.com/runtime-manager/api/v2/applications/04262d04-3388-43a9-82f9-6574cdb4816f",
+          "protocol": "https",
+          "host": [
+            "anypoint",
+            "mulesoft",
+            "com"
+          ],
+          "path": [
+            "runtime-manager",
+            "api",
+            "v2",
+            "applications",
+            "04262d04-3388-43a9-82f9-6574cdb4816f"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
